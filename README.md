@@ -8,7 +8,7 @@ Coursework 1 portfolio for **COMP08101 Programming for Cyber Security** at the U
 |---|---|
 | **Name** | Emmanuel Kalu |
 | **Banner ID** | B01808189 |
-| **Campus** Lanarkshire Campus
+| **Campus**    | Lanarkshire Campus |
 | **Module** | COMP08101 Programming for Cyber Security |
 
 ## About this repository
