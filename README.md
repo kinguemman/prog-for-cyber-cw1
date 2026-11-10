@@ -1,44 +1,76 @@
-# prog-for-cyber-cw1
+# Task 1: Security Tool
 
-Coursework 1 portfolio for **COMP08101 Programming for Cyber Security** at the University of the West of Scotland.
+**Name:** Emmanuel Kalu  
+**Banner ID:** B01808189  
+**Campus:** [Lanakshire Campus]  
+**Module:** COMP08101 Programming for Cyber Security
 
-## Student details
+## What the program does
 
-| | |
+A basic security tool for a small organisation. The user must log in first. After logging in, a security menu is shown and the program keeps running until the user chooses **Exit**.
+
+| Option | Function |
 |---|---|
-| **Name** | Emmanuel Kalu |
-| **Banner ID** | B01808189 |
-| **Campus** | Lanakshire Campus |
-| **Module** | COMP08101 Programming for Cyber Security |
+| 1. Security Event Counter | Asks for a password 10 times, counts correct and incorrect entries, shows the percentage of incorrect entries, and raises an alert if it is more than 50%. |
+| 2. Brute-Force Simulation | Lets the user guess a predefined password. Stops when the password is found or when the maximum of 5 attempts is reached. |
+| 3. Login Authentication | Asks for a username and password. Allows three failed logins, then displays that the account is frozen for 24 hours. |
+| 4. Exit | Displays "Thank you for using the security tool" and ends the program. |
 
-## About this repository
+## Python concepts used
 
-The `main` branch is the overview of the portfolio. Each programming exercise lives on its own branch, with its Python code, its own README and a licence.
+- Variables, strings and integers
+- `if` / `elif` / `else` decisions
+- `for` loops (fixed 10 attempts) and `while` loops (menu, login retries)
+- `break` to leave the menu loop
+- Functions with parameters and return values (`authenticate()`)
+- Comparison and logical operators (`==`, `<`, `>`, `and`, `not`)
+- f-strings for formatted output
 
-All programs are written in Python 3 and were developed and tested in VS Code on Windows.
+## Test credentials
 
-## Exercises and branches
+| Purpose | Value |
+|---|---|
+| Login username | `admin` |
+| Login password | `admin123` |
+| Event counter password | `Cyber123` |
+| Brute-force password | `letmein` |
 
-| Task | Exercise | Branch | Description |
-|---|---|---|---|
-| 1 | Security Tool | `security-tool` | Login-protected menu with a Security Event Counter, Brute-Force Simulation and Login Authentication (account freezes after 3 failed logins). |
-| 2 | Security Event Logger | `security-event-logger` | Asks for login details until correct and prints a log entry (event ID, username, IP address, event, timestamp) for every attempt. |
-| 3 | IP Address Validator | `ip-address-validator` | `validate_ip()` function that checks an IPv4 address has three dots, four numbers, and values from 0 to 255. |
-| 4 | Security Incident Manager | `security-incident-manager` | Stores a security incident in a dictionary and shows adding, updating, removing and displaying fields. |
-| 5 | Cyber Security Utilities | `cyber-security-utilities` | User-defined module `security_tools.py` (password validator, IP validator, strong password generator) imported by `main.py`. |
+## How to run
 
-## How to view an exercise
-
-On GitHub, use the branch dropdown to switch branch. Or locally:
+1. Open the project folder in VS Code.
+2. Open a terminal in VS Code (**Terminal → New Terminal**).
+3. Run:
 
 ```bash
-git clone https://github.com/<your-username>/prog-for-cyber-cw1.git
-cd prog-for-cyber-cw1
-git switch security-tool
+python security_tool.py
 ```
 
-Each branch's README explains how to run that program.
+Or open `security_tool.py` and click **Run → Start Debugging → Python Debugger**.
+
+## Example output
+
+```
+Welcome to the Security Tool
+Please log in to continue.
+Username: admin
+Password: admin123
+Login successful.
+
+==============================
+        SECURITY MENU
+==============================
+1. Security Event Counter
+2. Brute-Force Simulation
+3. Login Authentication
+4. Exit
+Select an option (1-4): 4
+Thank you for using the security tool
+```
+
+## Screenshots
+
+<!-- Add your output screenshots here, e.g. ![Menu](screenshots/menu.png) -->
 
 ## Licence
 
-This project is released under the MIT License. See `LICENSE`.
+MIT License. See `LICENSE`.
