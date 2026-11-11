@@ -1,44 +1,60 @@
-# prog-for-cyber-cw1
+# Task 4: Security Incident Manager using Dictionaries
 
-Coursework 1 portfolio for **COMP08101 Programming for Cyber Security** at the University of the West of Scotland.
+**Name:** Emmanuel Kalu  
+**Banner ID:** B01808189  
+**Campus:** [Lankshire Campus]  
+**Module:** COMP08101 Programming for Cyber Security
 
-## Student details
+## What the program does
 
-| | |
-|---|---|
-| **Name** | Emmanuel Kalu |
-| **Banner ID** | B01808189 |
-| **Campus**    | Lanarkshire Campus |
-| **Module** | COMP08101 Programming for Cyber Security |
+Stores information about a security incident in a Python dictionary and updates it. The program:
 
-## About this repository
+1. Creates a dictionary with a username, IP address, event type and risk level
+2. Displays the username and IP address
+3. Adds a new field called `status`
+4. Updates the risk level from Medium to High
+5. Removes the `event_type` field
+6. Displays all remaining keys and values
+7. Displays the total number of key-value pairs
 
-The `main` branch is the overview of the portfolio. Each programming exercise lives on its own branch, with its Python code, its own README and a licence.
+## Why a dictionary?
 
-All programs are written in Python 3 and were developed and tested in VS Code on Windows.
+A dictionary stores data as **key-value pairs**, so each value is found by a meaningful name (like `"ip_address"`) instead of a number position. This suits incident records, where each piece of information has a clear label.
 
-## Exercises and branches
+## Python concepts used
 
-| Task | Exercise | Branch | Description |
-|---|---|---|---|
-| 1 | Security Tool | `security-tool` | Login-protected menu with a Security Event Counter, Brute-Force Simulation and Login Authentication (account freezes after 3 failed logins). |
-| 2 | Security Event Logger | `security-event-logger` | Asks for login details until correct and prints a log entry (event ID, username, IP address, event, timestamp) for every attempt. |
-| 3 | IP Address Validator | `ip-address-validator` | `validate_ip()` function that checks an IPv4 address has three dots, four numbers, and values from 0 to 255. |
-| 4 | Security Incident Manager | `security-incident-manager` | Stores a security incident in a dictionary and shows adding, updating, removing and displaying fields. |
-| 5 | Cyber Security Utilities | `cyber-security-utilities` | User-defined module `security_tools.py` (password validator, IP validator, strong password generator) imported by `main.py`. |
+- Creating a dictionary with `{}`
+- Accessing values by key: `incident["username"]`
+- Adding and updating with `incident["key"] = value`
+- Removing with `del`
+- Looping with `.items()`
+- Counting with `len()`
 
-## How to view an exercise
-
-On GitHub, use the branch dropdown to switch branch. Or locally:
+## How to run
 
 ```bash
-git clone https://github.com/<your-username>/prog-for-cyber-cw1.git
-cd prog-for-cyber-cw1
-git switch security-tool
+python security_incident_manager.py
 ```
 
-Each branch's README explains how to run that program.
+## Example output
+
+```
+Username: alice
+IP Address: 192.168.1.25
+
+Remaining incident details:
+username: alice
+ip_address: 192.168.1.25
+risk_level: High
+status: Under investigation
+
+Total number of key-value pairs: 4
+```
+
+## Screenshots
+
+<!-- Add your output screenshots here -->
 
 ## Licence
 
-This project is released under the MIT License. See `LICENSE`.
+MIT License. See `LICENSE`.
