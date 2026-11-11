@@ -1,44 +1,74 @@
-# prog-for-cyber-cw1
+# Task 5: Reusable Cyber Security Utilities using User-Defined Modules
 
-Coursework 1 portfolio for **COMP08101 Programming for Cyber Security** at the University of the West of Scotland.
+**Name:** Emmanuel Kalu  
+**Banner ID:** B01808189  
+**Campus:** [Lanakshire Campus]  
+**Module:** COMP08101 Programming for Cyber Security
 
-## Student details
+## What the program does
 
-| | |
+Instead of placing all the code in one file, the security functions are organised into a separate, reusable module.
+
+### `security_tools.py` (the module)
+
+| Function | Purpose |
 |---|---|
-| **Name** | Emmanuel Kalu |
-| **Banner ID** | B01808189 |
-| **Campus**    | Lanarkshire Campus |
-| **Module** | COMP08101 Programming for Cyber Security |
+| `validate_password(password)` | Returns `True` if the password is at least 10 characters and contains at least one letter, one digit and one symbol. |
+| `validate_ip(ip)` | Returns `True` if the IP address has three dots, four numbers, and every number is 0–255. |
+| `generate_password()` | Returns a random strong password between 10 and 16 characters (length chosen randomly each time) containing uppercase, lowercase, digits and symbols. |
 
-## About this repository
+### `main.py` (the program)
 
-The `main` branch is the overview of the portfolio. Each programming exercise lives on its own branch, with its Python code, its own README and a licence.
+Imports `security_tools`, asks the user for a password and an IP address, and displays whether each is valid. If the password is weak, it suggests a randomly generated strong password.
 
-All programs are written in Python 3 and were developed and tested in VS Code on Windows.
+## Python concepts used
 
-## Exercises and branches
+- User-defined modules and `import`
+- Functions with parameters and return values
+- `random.randint()` and `random.choice()`
+- Lists: `append()`, indexing and `del`
+- String methods: `.isalpha()`, `.isdigit()`, `.isalnum()`, `.split()`, `.count()`, `.strip()`
+- `for` and `while` loops
 
-| Task | Exercise | Branch | Description |
-|---|---|---|---|
-| 1 | Security Tool | `security-tool` | Login-protected menu with a Security Event Counter, Brute-Force Simulation and Login Authentication (account freezes after 3 failed logins). |
-| 2 | Security Event Logger | `security-event-logger` | Asks for login details until correct and prints a log entry (event ID, username, IP address, event, timestamp) for every attempt. |
-| 3 | IP Address Validator | `ip-address-validator` | `validate_ip()` function that checks an IPv4 address has three dots, four numbers, and values from 0 to 255. |
-| 4 | Security Incident Manager | `security-incident-manager` | Stores a security incident in a dictionary and shows adding, updating, removing and displaying fields. |
-| 5 | Cyber Security Utilities | `cyber-security-utilities` | User-defined module `security_tools.py` (password validator, IP validator, strong password generator) imported by `main.py`. |
+## How to run
 
-## How to view an exercise
-
-On GitHub, use the branch dropdown to switch branch. Or locally:
+Keep both files in the same folder, then run:
 
 ```bash
-git clone https://github.com/<your-username>/prog-for-cyber-cw1.git
-cd prog-for-cyber-cw1
-git switch security-tool
+python main.py
 ```
 
-Each branch's README explains how to run that program.
+## Example output
+
+Weak password and invalid IP:
+
+```
+Enter a password: short
+Enter an IP address: 1.2.3
+
+Results
+-----------------------
+Password: WEAK (needs 10+ characters with a letter, digit and symbol)
+Suggested strong password: oio8m%B!Fm@49!
+IP Address: INVALID
+```
+
+Strong password and valid IP:
+
+```
+Enter a password: Summer2026!x
+Enter an IP address: 8.8.8.8
+
+Results
+-----------------------
+Password: STRONG
+IP Address: VALID
+```
+
+## Screenshots
+
+<!-- Add your output screenshots here -->
 
 ## Licence
 
-This project is released under the MIT License. See `LICENSE`.
+MIT License. See `LICENSE`.
