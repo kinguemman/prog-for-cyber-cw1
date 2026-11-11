@@ -1,44 +1,73 @@
-# prog-for-cyber-cw1
+# Task 2: Security Event Logger
 
-Coursework 1 portfolio for **COMP08101 Programming for Cyber Security** at the University of the West of Scotland.
+**Name:** Emmanuel Kalu  
+**Banner ID:** B01808189  
+**Campus:** [Lanakshire Campus]  
+**Module:** COMP08101 Programming for Cyber Security
 
-## Student details
+## What the program does
 
-| | |
-|---|---|
-| **Name** | Emmanuel Kalu |
-| **Banner ID** | B01808189 |
-| **Campus**    | Lanarkshire Campus |
-| **Module** | COMP08101 Programming for Cyber Security |
+A security event logger records security-related activity so it can be reviewed later, for example to spot repeated failed logins.
 
-## About this repository
+This program asks for a username and password until the correct details are entered. For **every** attempt, failed or successful, it prints a log entry containing:
 
-The `main` branch is the overview of the portfolio. Each programming exercise lives on its own branch, with its Python code, its own README and a licence.
+- Event ID (random 4-digit number)
+- Username
+- IP address of the computer
+- Event (Failed login / Successful login)
+- Timestamp
 
-All programs are written in Python 3 and were developed and tested in VS Code on Windows.
+## Python concepts used
 
-## Exercises and branches
+- Python libraries: `random`, `datetime`, `socket`
+- `while` loop that repeats until the correct login is entered
+- Functions (`get_ip_address()`, `print_event()`)
+- `try` / `except` so the program still works if the computer is offline
+- String methods (`.strip()`) and f-strings
 
-| Task | Exercise | Branch | Description |
-|---|---|---|---|
-| 1 | Security Tool | `security-tool` | Login-protected menu with a Security Event Counter, Brute-Force Simulation and Login Authentication (account freezes after 3 failed logins). |
-| 2 | Security Event Logger | `security-event-logger` | Asks for login details until correct and prints a log entry (event ID, username, IP address, event, timestamp) for every attempt. |
-| 3 | IP Address Validator | `ip-address-validator` | `validate_ip()` function that checks an IPv4 address has three dots, four numbers, and values from 0 to 255. |
-| 4 | Security Incident Manager | `security-incident-manager` | Stores a security incident in a dictionary and shows adding, updating, removing and displaying fields. |
-| 5 | Cyber Security Utilities | `cyber-security-utilities` | User-defined module `security_tools.py` (password validator, IP validator, strong password generator) imported by `main.py`. |
+## Test credentials
 
-## How to view an exercise
+- Username: `admin`
+- Password: `admin123`
 
-On GitHub, use the branch dropdown to switch branch. Or locally:
+## How to run
 
 ```bash
-git clone https://github.com/<your-username>/prog-for-cyber-cw1.git
-cd prog-for-cyber-cw1
-git switch security-tool
+python security_event_logger.py
 ```
 
-Each branch's README explains how to run that program.
+Or open the file in VS Code and click **Run → Start Debugging → Python Debugger**.
+
+## Example output
+
+```
+SECURITY EVENT LOG
+==================
+Enter username: admin
+Enter password: wrong
+
+Event ID: 8009
+Username: admin
+IP Address: 192.168.1.25
+Event: Failed login
+Timestamp: 2026-11-10 12:16:07
+
+Enter username: admin
+Enter password: admin123
+
+Event ID: 7849
+Username: admin
+IP Address: 192.168.1.25
+Event: Successful login
+Timestamp: 2026-11-10 12:16:15
+
+Login complete. All attempts have been logged above.
+```
+
+## Screenshots
+
+<!-- Add your output screenshots here -->
 
 ## Licence
 
-This project is released under the MIT License. See `LICENSE`.
+MIT License. See `LICENSE`.
