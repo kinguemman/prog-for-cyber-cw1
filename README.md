@@ -1,44 +1,58 @@
-# prog-for-cyber-cw1
+# Task 3: IP Address Validator (using Function)
 
-Coursework 1 portfolio for **COMP08101 Programming for Cyber Security** at the University of the West of Scotland.
+**Name:** Emmanuel Kalu  
+**Banner ID:** B01808189  
+**Campus:** [Lanakshire Campus]  
+**Module:** COMP08101 Programming for Cyber Security
 
-## Student details
+## What the program does
 
-| | |
-|---|---|
-| **Name** | Emmanuel Kalu |
-| **Banner ID** | B01808189 |
-| **Campus**    | Lanarkshire Campus |
-| **Module** | COMP08101 Programming for Cyber Security |
+IP addresses appear constantly in security logs. Before analysing one, a program can check that it has the expected structure.
 
-## About this repository
+The `validate_ip()` function performs a basic IPv4 format check. It:
 
-The `main` branch is the overview of the portfolio. Each programming exercise lives on its own branch, with its Python code, its own README and a licence.
+1. Accepts an IP address as a parameter
+2. Removes unnecessary spaces with `.strip()`
+3. Checks the address contains dots
+4. Checks there are exactly three dots
+5. Checks there are exactly four numbers
+6. Checks every number is between 0 and 255
+7. Returns `True` if all checks pass, otherwise `False`
 
-All programs are written in Python 3 and were developed and tested in VS Code on Windows.
+This is a basic format check, not a complete IPv4 validation system.
 
-## Exercises and branches
+## Python concepts used
 
-| Task | Exercise | Branch | Description |
-|---|---|---|---|
-| 1 | Security Tool | `security-tool` | Login-protected menu with a Security Event Counter, Brute-Force Simulation and Login Authentication (account freezes after 3 failed logins). |
-| 2 | Security Event Logger | `security-event-logger` | Asks for login details until correct and prints a log entry (event ID, username, IP address, event, timestamp) for every attempt. |
-| 3 | IP Address Validator | `ip-address-validator` | `validate_ip()` function that checks an IPv4 address has three dots, four numbers, and values from 0 to 255. |
-| 4 | Security Incident Manager | `security-incident-manager` | Stores a security incident in a dictionary and shows adding, updating, removing and displaying fields. |
-| 5 | Cyber Security Utilities | `cyber-security-utilities` | User-defined module `security_tools.py` (password validator, IP validator, strong password generator) imported by `main.py`. |
+- User-defined function with a parameter and a return value
+- String methods: `.strip()`, `.count()`, `.split()`, `.isdigit()`
+- `in` operator, `len()`, `int()` conversion
+- `for` loop over a list
+- `if` statements with early `return`
 
-## How to view an exercise
-
-On GitHub, use the branch dropdown to switch branch. Or locally:
+## How to run
 
 ```bash
-git clone https://github.com/<your-username>/prog-for-cyber-cw1.git
-cd prog-for-cyber-cw1
-git switch security-tool
+python ip_address_validator.py
 ```
 
-Each branch's README explains how to run that program.
+## Example output
+
+| Input | Output | Reason |
+|---|---|---|
+| `192.168.1.10` | Valid IP address | Passes every check |
+| `192.168.1.300` | Invalid IP address | 300 is above 255 |
+| `192.168.1` | Invalid IP address | Only two dots / three numbers |
+| `192.168.one.10` | Invalid IP address | "one" is not a number |
+
+```
+Enter an IP address: 192.168.1.10
+Valid IP address
+```
+
+## Screenshots
+
+<!-- Add your output screenshots here -->
 
 ## Licence
 
-This project is released under the MIT License. See `LICENSE`.
+MIT License. See `LICENSE`.
