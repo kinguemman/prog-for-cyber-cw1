@@ -51,8 +51,7 @@ Valid IP address
 
 ## Screenshots
 
-### Valid and invalid input
-![Valid and invalid runs](Task%203.png)
+![Valid and invalid runs](Task%203%20%28Valid%2CInvalid%29.png)
 
 ## Licence
 
