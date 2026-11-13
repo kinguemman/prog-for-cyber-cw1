@@ -66,7 +66,11 @@ Login complete. All attempts have been logged above.
 
 ## Screenshots
 
-<!-- Add your output screenshots here -->
+### Valid input
+![Valid run](Task%202%20%28Valid%29.png)
+
+### Invalid input
+![Invalid run](Task%202%20%28Invalid%29.png)
 
 ## Licence
 
