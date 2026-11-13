@@ -67,7 +67,8 @@ IP Address: VALID
 
 ## Screenshots
 
-<!-- Add your output screenshots here -->
+### Valid and invalid input
+![Valid and invalid runs](Task%205.png)
 
 ## Licence
 
