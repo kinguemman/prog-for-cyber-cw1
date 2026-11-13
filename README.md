@@ -69,7 +69,11 @@ Thank you for using the security tool
 
 ## Screenshots
 
-<!-- Add your output screenshots here, e.g. ![Menu](screenshots/menu.png) -->
+### Valid input
+![Valid run](Task%201%20%28Valid%29.png)
+
+### Invalid input
+![Invalid run](Task%201%20%28Invalid%29.png)
 
 ## Licence
 
