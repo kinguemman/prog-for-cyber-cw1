@@ -53,7 +53,8 @@ Total number of key-value pairs: 4
 
 ## Screenshots
 
-<!-- Add your output screenshots here -->
+### Program output
+![Program output](Task%204.png)
 
 ## Licence
 
